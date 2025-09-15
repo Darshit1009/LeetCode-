@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool checkDivisibility(int n) {
+        int org = n;
+        int ds = 0, dp = 1;
+
+        while (n > 0) {
+            int digit = n % 10;
+            ds += digit;
+            dp *= digit;
+            n /= 10;
+        }
+
+        int total = ds + dp;
+        return org % total == 0;
+    }
+};
