@@ -4,7 +4,7 @@ char findTheDifference(string s, string t)
 {
     int ascii1 = 0;
     int ascii2 = 0;
-    int sub;
+
     for (int i = 0; i < s.size(); i++)
     {
         ascii1 += s[i];
