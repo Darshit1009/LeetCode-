@@ -1,63 +1,36 @@
 #include <iostream>
+#include <bits/c++.h>
+
 using namespace std;
-
-int main(int argc, char const *argv[])
+int lengthOfLastWord(string s)
 {
-
-    string date = "2019-02-25";
-    string first = date.substr(0, 4);
-    int a = stoi(first);
-
-    string second = date.substr(6, 8);
-    int d = stoi(second);
-
-    string last = date.substr(9, 11);
-    int e = stoi(last);
-    int days = 0;
-
-    cout << last;
-    for (int i = d; i > 0; i--)
+    // Trim trailing spaces
+    while (!s.empty() && s.back() == ' ')
     {
-        if (a % 4 == 0)
+        s.pop_back();
+    }
+
+    // Reverse the string in-place
+    std::reverse(s.begin(), s.end());
+
+    int c = 0;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (std::isalpha(s[i]))
         {
-            if (d == 1)
-            {
-                days = e;
-            }
-            if (d == 2)
-            {
-                days = days + 29;
-            }
-            if (d == 3 || d == 5 || d == 7 || d == 8 || d == 10 || d == 12)
-            {
-                days = days + 31;
-            }
-            if (d == 4 || d == 6 || d == 9 || d == 11)
-            {
-                days = days + 30;
-            }
+            c++;
         }
-        else
+        else if (s[i] == ' ')
         {
-            if (d == 1)
-            {
-                days = e;
-            }
-            if (d == 2)
-            {
-                days = days + 28;
-            }
-            if (d == 3 || d == 5 || d == 7 || d == 8 || d == 10 || d == 12)
-            {
-                days = days + 31;
-            }
-            if (d == 4 || d == 6 || d == 9 || d == 11)
-            {
-                days = days + 30;
-            }
+            break;
         }
     }
-    cout << days;
 
+    return c;
+}
+int main(int argc, char const *argv[])
+{
+    cout << lengthOfLastWord("darshit kacha satishbhai");
     return 0;
 }
