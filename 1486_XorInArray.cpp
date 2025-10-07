@@ -28,3 +28,4 @@ int main(int argc, char const *argv[])
     cout << s.xorOperation(10, 0);
     return 0;
 }
+33
