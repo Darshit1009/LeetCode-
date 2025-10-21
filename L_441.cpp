@@ -25,6 +25,6 @@ public:
 int main()
 {
     Solution s;
-    s.Coin(5);
+    s.arrangeCoins(10);
     return 0;
 }
