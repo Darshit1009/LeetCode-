@@ -13,7 +13,6 @@ public:
         {
             int count = 0;
             int sum = 0;
-
             for (int j = 1; j <= nums[i]; j++)
             {
                 if (nums[i] % j == 0)
