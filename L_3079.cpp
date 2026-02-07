@@ -1,35 +1,34 @@
+#include <vector>
+#include <string>
 #include <algorithm>
 #include <iostream>
-#include <vector>
 using namespace std;
+
 class Solution
 {
 public:
     int sumOfEncryptedInt(vector<int> &nums)
     {
-        int j = 0;
         int sum = 0;
-        for (int i = 0; i < nums.size(); i++)
+        for (int x : nums)
         {
-            j = fD(nums[i]);
-            sum += j;
+            sum += encrypt(x);
         }
         return sum;
     }
-    int fD(int i)
-    {
-        int max = 0;
-        string s = to_string(i);
 
-        char maxdigit = *max_element(s.begin(), s.end());
-        string a = "";
-        for (int i = 0; i < s.size(); i++)
-        {
-            a += to_string(maxdigit);
-        }
-        return stoi(a);
+    int encrypt(int n)
+    {
+        string s = to_string(n);
+
+        char maxDigit = *max_element(s.begin(), s.end());
+
+        string encrypted(s.size(), maxDigit); // clean & fast
+
+        return stoi(encrypted);
     }
 };
+
 int main()
 {
     Solution s;
