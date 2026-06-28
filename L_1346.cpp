@@ -1,19 +1,18 @@
-#include <algorithm>
-#include <vector>
-#include <iostream>
+#include<iostream>
+#include<algorithm>
 using namespace std;
-class Solution
-{
+#include<vector>
+
+class Solution {
 public:
-    bool checkIfExist(vector<int> &arr)
-    {
-        for (int i = 0; i < arr.size(); i++)
+    bool checkIfExist(vector<int>& arr) {
+        for(int i=0;i<arr.size();i++)
         {
-            for (int j = 0; j < arr.size(); j++)
+            for(int j=0;j<arr.size();j++)
             {
-                if (i != j)
+                if(i!=j)
                 {
-                    if (arr[i] == 2 * arr[j])
+                    if(arr[i]==2*arr[j])
                     {
                         return true;
                     }
@@ -21,13 +20,14 @@ public:
             }
         }
         return false;
+       
     }
 };
-int main(int argc, char const *argv[])
+main()
 {
     Solution s;
-    vector<int> arr = {10, 2, 5, 3};
-    cout<<boolalpha;
-    cout << s.checkIfExist(arr);
+    vector<int> arr={10,2,5,3};
+    cout<<s.checkIfExist(arr);
+    
     return 0;
 }
