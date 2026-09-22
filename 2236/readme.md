@@ -1,4 +1,4 @@
-# 🌳 Check Tree
+# 2236. Root Equals Sum of Children
 
 A simple **Binary Tree** problem that checks whether the value of the root node is equal to the sum of its left and right child nodes.
 
